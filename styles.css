@@ -1,0 +1,2746 @@
+html,
+body,
+#main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+:root {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+    margin: 0
+}
+
+body,
+input,
+textarea,
+select,
+button {
+    font-size: 12px;
+    font-family: sans-serif
+}
+
+body {
+    --framer-will-change-override: none
+}
+
+@supports (background: -webkit-named-image(i)) and (not (grid-template-rows: subgrid)) {
+    body {
+        --framer-will-change-override: transform
+    }
+}
+
+[data-framer-component-type] {
+    position: absolute
+}
+
+[data-framer-component-type=Text] {
+    cursor: inherit
+}
+
+[data-framer-component-text-autosized] * {
+    white-space: pre
+}
+
+[data-framer-component-type=Text]>* {
+    text-align: var(--framer-text-alignment, start)
+}
+
+[data-framer-component-type=Text] span span,
+[data-framer-component-type=Text] p span,
+[data-framer-component-type=Text] h1 span,
+[data-framer-component-type=Text] h2 span,
+[data-framer-component-type=Text] h3 span,
+[data-framer-component-type=Text] h4 span,
+[data-framer-component-type=Text] h5 span,
+[data-framer-component-type=Text] h6 span {
+    display: block
+}
+
+[data-framer-component-type=Text] span span span,
+[data-framer-component-type=Text] p span span,
+[data-framer-component-type=Text] h1 span span,
+[data-framer-component-type=Text] h2 span span,
+[data-framer-component-type=Text] h3 span span,
+[data-framer-component-type=Text] h4 span span,
+[data-framer-component-type=Text] h5 span span,
+[data-framer-component-type=Text] h6 span span {
+    display: unset
+}
+
+[data-framer-component-type=Text] div div span,
+[data-framer-component-type=Text] a div span,
+[data-framer-component-type=Text] span span span,
+[data-framer-component-type=Text] p span span,
+[data-framer-component-type=Text] h1 span span,
+[data-framer-component-type=Text] h2 span span,
+[data-framer-component-type=Text] h3 span span,
+[data-framer-component-type=Text] h4 span span,
+[data-framer-component-type=Text] h5 span span,
+[data-framer-component-type=Text] h6 span span,
+[data-framer-component-type=Text] a {
+    font-family: var(--font-family);
+    font-style: var(--font-style);
+    font-weight: min(calc(var(--framer-font-weight-increase, 0) + var(--font-weight, 400)), 900);
+    color: var(--text-color);
+    letter-spacing: var(--letter-spacing);
+    font-size: var(--font-size);
+    text-transform: var(--text-transform);
+    --text-decoration: var(--framer-text-decoration-style, solid) var(--framer-text-decoration, none) var(--framer-text-decoration-color, currentcolor) var(--framer-text-decoration-thickness, auto);
+    --text-decoration-skip-ink: var(--framer-text-decoration-skip-ink);
+    --text-underline-offset: var(--framer-text-decoration-offset);
+    line-height: var(--line-height)
+}
+
+[data-framer-component-type=Text] div div span,
+[data-framer-component-type=Text] a div span,
+[data-framer-component-type=Text] span span span,
+[data-framer-component-type=Text] p span span,
+[data-framer-component-type=Text] h1 span span,
+[data-framer-component-type=Text] h2 span span,
+[data-framer-component-type=Text] h3 span span,
+[data-framer-component-type=Text] h4 span span,
+[data-framer-component-type=Text] h5 span span,
+[data-framer-component-type=Text] h6 span span,
+[data-framer-component-type=Text] a {
+    --font-family: var(--framer-font-family);
+    --font-style: var(--framer-font-style);
+    --font-weight: var(--framer-font-weight);
+    --text-color: var(--framer-text-color);
+    --letter-spacing: var(--framer-letter-spacing);
+    --font-size: var(--framer-font-size);
+    --text-transform: var(--framer-text-transform);
+    --text-decoration: var(--framer-text-decoration-style, solid) var(--framer-text-decoration, none) var(--framer-text-decoration-color, currentcolor) var(--framer-text-decoration-thickness, auto);
+    --text-decoration-skip-ink: var(--framer-text-decoration-skip-ink);
+    --text-underline-offset: var(--framer-text-decoration-offset);
+    --line-height: var(--framer-line-height)
+}
+
+[data-framer-component-type=Text] a,
+[data-framer-component-type=Text] a div span,
+[data-framer-component-type=Text] a span span span,
+[data-framer-component-type=Text] a p span span,
+[data-framer-component-type=Text] a h1 span span,
+[data-framer-component-type=Text] a h2 span span,
+[data-framer-component-type=Text] a h3 span span,
+[data-framer-component-type=Text] a h4 span span,
+[data-framer-component-type=Text] a h5 span span,
+[data-framer-component-type=Text] a h6 span span {
+    --font-family: var(--framer-link-font-family, var(--framer-font-family));
+    --font-style: var(--framer-link-font-style, var(--framer-font-style));
+    --font-weight: var(--framer-link-font-weight, var(--framer-font-weight));
+    --text-color: var(--framer-link-text-color, var(--framer-text-color));
+    --font-size: var(--framer-link-font-size, var(--framer-font-size));
+    --text-transform: var(--framer-link-text-transform, var(--framer-text-transform));
+    --text-decoration: var(--framer-link-text-decoration-style, var(--framer-text-decoration-style, solid)) var(--framer-link-text-decoration, var(--framer-text-decoration, none)) var(--framer-link-text-decoration-color, var(--framer-text-decoration-color, currentcolor)) var(--framer-link-text-decoration-thickness, var(--framer-text-decoration-thickness, auto));
+    --text-decoration-skip-ink: var(--framer-link-text-decoration-skip-ink, var(--framer-text-decoration-skip-ink));
+    --text-underline-offset: var(--framer-link-text-decoration-offset, var(--framer-text-decoration-offset))
+}
+
+[data-framer-component-type=Text] a:hover,
+[data-framer-component-type=Text] a div span:hover,
+[data-framer-component-type=Text] a span span span:hover,
+[data-framer-component-type=Text] a p span span:hover,
+[data-framer-component-type=Text] a h1 span span:hover,
+[data-framer-component-type=Text] a h2 span span:hover,
+[data-framer-component-type=Text] a h3 span span:hover,
+[data-framer-component-type=Text] a h4 span span:hover,
+[data-framer-component-type=Text] a h5 span span:hover,
+[data-framer-component-type=Text] a h6 span span:hover {
+    --font-family: var(--framer-link-hover-font-family, var(--framer-link-font-family, var(--framer-font-family)));
+    --font-style: var(--framer-link-hover-font-style, var(--framer-link-font-style, var(--framer-font-style)));
+    --font-weight: var(--framer-link-hover-font-weight, var(--framer-link-font-weight, var(--framer-font-weight)));
+    --text-color: var(--framer-link-hover-text-color, var(--framer-link-text-color, var(--framer-text-color)));
+    --font-size: var(--framer-link-hover-font-size, var(--framer-link-font-size, var(--framer-font-size)));
+    --text-transform: var(--framer-link-hover-text-transform, var(--framer-link-text-transform, var(--framer-text-transform)));
+    --text-decoration: var(--framer-link-hover-text-decoration-style, var(--framer-link-text-decoration-style, var(--framer-text-decoration-style, solid))) var(--framer-link-hover-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, none))) var(--framer-link-hover-text-decoration-color, var(--framer-link-text-decoration-color, var(--framer-text-decoration-color, currentcolor))) var(--framer-link-hover-text-decoration-thickness, var(--framer-link-text-decoration-thickness, var(--framer-text-decoration-thickness, auto)));
+    --text-decoration-skip-ink: var(--framer-link-hover-text-decoration-skip-ink, var(--framer-link-text-decoration-skip-ink, var(--framer-text-decoration-skip-ink)));
+    --text-underline-offset: var(--framer-link-hover-text-decoration-offset, var(--framer-link-text-decoration-offset, var(--framer-text-decoration-offset)))
+}
+
+[data-framer-component-type=Text].isCurrent a,
+[data-framer-component-type=Text].isCurrent a div span,
+[data-framer-component-type=Text].isCurrent a span span span,
+[data-framer-component-type=Text].isCurrent a p span span,
+[data-framer-component-type=Text].isCurrent a h1 span span,
+[data-framer-component-type=Text].isCurrent a h2 span span,
+[data-framer-component-type=Text].isCurrent a h3 span span,
+[data-framer-component-type=Text].isCurrent a h4 span span,
+[data-framer-component-type=Text].isCurrent a h5 span span,
+[data-framer-component-type=Text].isCurrent a h6 span span {
+    --font-family: var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family)));
+    --font-style: var(--framer-link-current-font-style, var(--framer-link-font-style, var(--framer-font-style)));
+    --font-weight: var(--framer-link-current-font-weight, var(--framer-link-font-weight, var(--framer-font-weight)));
+    --text-color: var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-text-color)));
+    --font-size: var(--framer-link-current-font-size, var(--framer-link-font-size, var(--framer-font-size)));
+    --text-transform: var(--framer-link-current-text-transform, var(--framer-link-text-transform, var(--framer-text-transform)));
+    --text-decoration: var(--framer-link-current-text-decoration-style, var(--framer-link-text-decoration-style, var(--framer-text-decoration-style, solid))) var(--framer-link-current-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, none))) var(--framer-link-current-text-decoration-color, var(--framer-link-text-decoration-color, var(--framer-text-decoration-color, currentcolor))) var(--framer-link-current-text-decoration-thickness, var(--framer-link-text-decoration-thickness, var(--framer-text-decoration-thickness, auto)));
+    --text-decoration-skip-ink: var(--framer-link-current-text-decoration-skip-ink, var(--framer-link-text-decoration-skip-ink, var(--framer-text-decoration-skip-ink)));
+    --text-underline-offset: var(--framer-link-current-text-decoration-offset, var(--framer-link-text-decoration-offset, var(--framer-text-decoration-offset)))
+}
+
+p.framer-text,
+div.framer-text,
+figure.framer-text,
+h1.framer-text,
+h2.framer-text,
+h3.framer-text,
+h4.framer-text,
+h5.framer-text,
+h6.framer-text,
+ol.framer-text,
+ul.framer-text {
+    margin: 0;
+    padding: 0
+}
+
+p.framer-text,
+div.framer-text,
+h1.framer-text,
+h2.framer-text,
+h3.framer-text,
+h4.framer-text,
+h5.framer-text,
+h6.framer-text,
+li.framer-text,
+ol.framer-text,
+ul.framer-text,
+mark.framer-text,
+span.framer-text:not([data-text-fill]) {
+    font-family: var(--framer-blockquote-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif));
+    font-style: var(--framer-blockquote-font-style, var(--framer-font-style, normal));
+    font-weight: var(--framer-blockquote-font-weight, var(--framer-font-weight, 400));
+    color: var(--framer-blockquote-text-color, var(--framer-text-color, #000));
+    font-size: calc(var(--framer-blockquote-font-size, var(--framer-font-size, 16px)) * var(--framer-font-size-scale, 1));
+    letter-spacing: var(--framer-blockquote-letter-spacing, var(--framer-letter-spacing, 0));
+    text-transform: var(--framer-blockquote-text-transform, var(--framer-text-transform, none));
+    text-decoration-line: var(--framer-blockquote-text-decoration, var(--framer-text-decoration, initial));
+    text-decoration-style: var(--framer-blockquote-text-decoration-style, var(--framer-text-decoration-style, initial));
+    text-decoration-color: var(--framer-blockquote-text-decoration-color, var(--framer-text-decoration-color, initial));
+    text-decoration-thickness: var(--framer-blockquote-text-decoration-thickness, var(--framer-text-decoration-thickness, initial));
+    text-decoration-skip-ink: var(--framer-blockquote-text-decoration-skip-ink, var(--framer-text-decoration-skip-ink, initial));
+    text-underline-offset: var(--framer-blockquote-text-decoration-offset, var(--framer-text-decoration-offset, initial));
+    line-height: var(--framer-blockquote-line-height, var(--framer-line-height, 1.2em));
+    text-align: var(--framer-blockquote-text-alignment, var(--framer-text-alignment, start));
+    -webkit-text-stroke-width: var(--framer-text-stroke-width, initial);
+    -webkit-text-stroke-color: var(--framer-text-stroke-color, initial);
+    -moz-font-feature-settings: var(--framer-font-open-type-features, initial);
+    -webkit-font-feature-settings: var(--framer-font-open-type-features, initial);
+    font-feature-settings: var(--framer-font-open-type-features, initial);
+    font-variation-settings: var(--framer-font-variation-axes, normal);
+    text-wrap: var(--framer-text-wrap-override, var(--framer-text-wrap))
+}
+
+mark.framer-text,
+p.framer-text,
+div.framer-text,
+h1.framer-text,
+h2.framer-text,
+h3.framer-text,
+h4.framer-text,
+h5.framer-text,
+h6.framer-text,
+li.framer-text,
+ol.framer-text,
+ul.framer-text {
+    background-color: var(--framer-blockquote-text-background-color, var(--framer-text-background-color, initial));
+    border-radius: var(--framer-blockquote-text-background-radius, var(--framer-text-background-radius, initial));
+    padding: var(--framer-blockquote-text-background-padding, var(--framer-text-background-padding, initial))
+}
+
+@supports not (color: color(display-p3 1 1 1)) {
+
+    p.framer-text,
+    div.framer-text,
+    h1.framer-text,
+    h2.framer-text,
+    h3.framer-text,
+    h4.framer-text,
+    h5.framer-text,
+    h6.framer-text,
+    li.framer-text,
+    ol.framer-text,
+    ul.framer-text,
+    span.framer-text:not([data-text-fill]) {
+        color: var(--framer-blockquote-text-color-rgb, var(--framer-blockquote-text-color, var(--framer-text-color-rgb, var(--framer-text-color, #000))));
+        -webkit-text-stroke-color: var(--framer-text-stroke-color-rgb, var(--framer-text-stroke-color, initial))
+    }
+
+    mark.framer-text {
+        background-color: var(--framer-blockquote-text-background-color-rgb, var(--framer-blockquote-text-background-color, var(--framer-text-background-color-rgb, var(--framer-text-background-color, initial))))
+    }
+}
+
+.framer-fit-text .framer-text {
+    white-space: nowrap;
+    white-space-collapse: preserve
+}
+
+strong.framer-text {
+    font-family: var(--framer-blockquote-font-family-bold, var(--framer-font-family-bold));
+    font-style: var(--framer-blockquote-font-style-bold, var(--framer-font-style-bold));
+    font-weight: var(--framer-blockquote-font-weight-bold, var(--framer-font-weight-bold, bolder));
+    font-variation-settings: var(--framer-blockquote-font-variation-axes-bold, var(--framer-font-variation-axes-bold))
+}
+
+em.framer-text {
+    font-family: var(--framer-blockquote-font-family-italic, var(--framer-font-family-italic));
+    font-style: var(--framer-blockquote-font-style-italic, var(--framer-font-style-italic, italic));
+    font-weight: var(--framer-blockquote-font-weight-italic, var(--framer-font-weight-italic));
+    font-variation-settings: var(--framer-blockquote-font-variation-axes-italic, var(--framer-font-variation-axes-italic))
+}
+
+em.framer-text>strong.framer-text {
+    font-family: var(--framer-blockquote-font-family-bold-italic, var(--framer-font-family-bold-italic));
+    font-style: var(--framer-blockquote-font-style-bold-italic, var(--framer-font-style-bold-italic, italic));
+    font-weight: var(--framer-blockquote-font-weight-bold-italic, var(--framer-font-weight-bold-italic, bolder));
+    font-variation-settings: var(--framer-blockquote-font-variation-axes-bold-italic, var(--framer-font-variation-axes-bold-italic))
+}
+
+p.framer-text:not(:first-child),
+div.framer-text:not(:first-child),
+h1.framer-text:not(:first-child),
+h2.framer-text:not(:first-child),
+h3.framer-text:not(:first-child),
+h4.framer-text:not(:first-child),
+h5.framer-text:not(:first-child),
+h6.framer-text:not(:first-child),
+ol.framer-text:not(:first-child),
+ul.framer-text:not(:first-child),
+blockquote.framer-text:not(:first-child),
+table.framer-text:not(:first-child),
+figure.framer-text:not(:first-child),
+.framer-image.framer-text:not(:first-child) {
+    margin-top: var(--framer-blockquote-paragraph-spacing, var(--framer-paragraph-spacing, 0))
+}
+
+li.framer-text>ul.framer-text:nth-child(2),
+li.framer-text>ol.framer-text:nth-child(2) {
+    margin-top: 0
+}
+
+.framer-text[data-text-fill] {
+    display: inline-block;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: max(0em, calc(calc(1.3em - var(--framer-blockquote-line-height, var(--framer-line-height, 1.3em))) / 2));
+    margin: min(0em, calc(calc(1.3em - var(--framer-blockquote-line-height, var(--framer-line-height, 1.3em))) / -2))
+}
+
+code.framer-text,
+code.framer-text span.framer-text:not([data-text-fill]) {
+    font-family: var(--framer-code-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif));
+    font-style: var(--framer-blockquote-font-style, var(--framer-code-font-style, var(--framer-font-style, normal)));
+    font-weight: var(--framer-blockquote-font-weight, var(--framer-code-font-weight, var(--framer-font-weight, 400)));
+    color: var(--framer-blockquote-text-color, var(--framer-code-text-color, var(--framer-text-color, #000)));
+    font-size: calc(var(--framer-blockquote-font-size, var(--framer-font-size, 16px)) * var(--framer-font-size-scale, 1));
+    letter-spacing: var(--framer-blockquote-letter-spacing, var(--framer-letter-spacing, 0));
+    line-height: var(--framer-blockquote-line-height, var(--framer-line-height, 1.2em))
+}
+
+@supports not (color: color(display-p3 1 1 1)) {
+
+    code.framer-text,
+    code.framer-text span.framer-text:not([data-text-fill]) {
+        color: var(--framer-blockquote-text-color-rgb, var(--framer-blockquote-text-color, var(--framer-code-text-color-rgb, var(--framer-code-text-color, var(--framer-text-color-rgb, var(--framer-text-color, #000))))))
+    }
+}
+
+blockquote.framer-text {
+    margin-block-start: initial;
+    margin-block-end: initial;
+    margin-inline-start: initial;
+    margin-inline-end: initial;
+    unicode-bidi: initial
+}
+
+a.framer-text,
+a.framer-text span.framer-text:not([data-text-fill]),
+span.framer-text[data-nested-link],
+span.framer-text[data-nested-link] span.framer-text:not([data-text-fill]) {
+    font-family: var(--framer-blockquote-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)));
+    font-style: var(--framer-blockquote-font-style, var(--framer-link-font-style, var(--framer-font-style, normal)));
+    font-weight: var(--framer-blockquote-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400)));
+    color: var(--framer-blockquote-text-color, var(--framer-link-text-color, var(--framer-text-color, #000)));
+    font-size: calc(var(--framer-blockquote-font-size, var(--framer-font-size, 16px)) * var(--framer-font-size-scale, 1));
+    text-transform: var(--framer-blockquote-text-transform, var(--framer-link-text-transform, var(--framer-text-transform, none)));
+    cursor: var(--framer-custom-cursors, pointer);
+    background-color: var(--framer-link-text-background-color, var(--framer-text-background-color, initial));
+    border-radius: var(--framer-link-text-background-radius, var(--framer-text-background-radius, initial));
+    padding: var(--framer-link-text-background-padding, var(--framer-text-background-padding, initial))
+}
+
+a.framer-text,
+span.framer-text[data-nested-link] {
+    text-decoration-line: var(--framer-blockquote-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, initial)));
+    text-decoration-style: var(--framer-blockquote-text-decoration-style, var(--framer-link-text-decoration-style, var(--framer-text-decoration-style, initial)));
+    text-decoration-color: var(--framer-blockquote-text-decoration-color, var(--framer-link-text-decoration-color, var(--framer-text-decoration-color, initial)));
+    text-decoration-thickness: var(--framer-blockquote-text-decoration-thickness, var(--framer-link-text-decoration-thickness, var(--framer-text-decoration-thickness, initial)));
+    text-decoration-skip-ink: var(--framer-blockquote-text-decoration-skip-ink, var(--framer-link-text-decoration-skip-ink, var(--framer-text-decoration-skip-ink, initial)));
+    text-underline-offset: var(--framer-blockquote-text-decoration-offset, var(--framer-link-text-decoration-offset, var(--framer-text-decoration-offset, initial)))
+}
+
+@supports not (color: color(display-p3 1 1 1)) {
+
+    a.framer-text,
+    a.framer-text span.framer-text:not([data-text-fill]),
+    span.framer-text[data-nested-link],
+    span.framer-text[data-nested-link] span.framer-text:not([data-text-fill]) {
+        color: var(--framer-blockquote-text-color-rgb, var(--framer-blockquote-text-color, var(--framer-link-text-color-rgb, var(--framer-link-text-color, var(--framer-text-color-rgb, var(--framer-text-color, #000))))));
+        background-color: var(--framer-link-text-background-color-rgb, var(--framer-link-text-background-color, var(--framer-text-background-color-rgb, var(--framer-text-background-color, initial))))
+    }
+}
+
+code.framer-text a.framer-text,
+code.framer-text a.framer-text span.framer-text:not([data-text-fill]),
+code.framer-text span.framer-text[data-nested-link],
+code.framer-text span.framer-text[data-nested-link] span.framer-text:not([data-text-fill]) {
+    font-family: var(--framer-code-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif));
+    font-style: var(--framer-blockquote-font-style, var(--framer-code-font-style, var(--framer-font-style, normal)));
+    font-weight: var(--framer-blockquote-font-weight, var(--framer-code-font-weight, var(--framer-font-weight, 400)));
+    color: var(--framer-blockquote-text-color, var(--framer-link-text-color, var(--framer-code-text-color, var(--framer-text-color, #000))));
+    font-size: calc(var(--framer-blockquote-font-size, var(--framer-font-size, 16px)) * var(--framer-font-size-scale, 1))
+}
+
+@supports not (color: color(display-p3 1 1 1)) {
+
+    code.framer-text a.framer-text,
+    code.framer-text a.framer-text span.framer-text:not([data-text-fill]),
+    code.framer-text span.framer-text[data-nested-link],
+    code.framer-text span.framer-text[data-nested-link] span.framer-text:not([data-text-fill]) {
+        color: var(--framer-blockquote-text-color-rgb, var(--framer-blockquote-text-color, var(--framer-link-text-color-rgb, var(--framer-link-text-color, var(--framer-code-text-color-rgb, var(--framer-code-text-color, var(--framer-text-color-rgb, var(--framer-text-color, #000))))))))
+    }
+}
+
+a.framer-text:hover,
+a.framer-text:hover span.framer-text:not([data-text-fill]),
+span.framer-text[data-nested-link]:hover,
+span.framer-text[data-nested-link]:hover span.framer-text:not([data-text-fill]) {
+    font-family: var(--framer-link-hover-font-family, var(--framer-blockquote-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif))));
+    font-style: var(--framer-link-hover-font-style, var(--framer-blockquote-font-style, var(--framer-link-font-style, var(--framer-font-style, normal))));
+    font-weight: var(--framer-link-hover-font-weight, var(--framer-blockquote-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400))));
+    color: var(--framer-link-hover-text-color, var(--framer-blockquote-text-color, var(--framer-link-text-color, var(--framer-text-color, #000))));
+    font-size: calc(var(--framer-link-hover-font-size, var(--framer-blockquote-font-size, var(--framer-font-size, 16px))) * var(--framer-font-size-scale, 1));
+    text-transform: var(--framer-link-hover-text-transform, var(--framer-blockquote-text-transform, var(--framer-link-text-transform, var(--framer-text-transform, none))));
+    background-color: var(--framer-link-hover-text-background-color, var(--framer-link-text-background-color, var(--framer-text-background-color, initial)));
+    border-radius: var(--framer-link-hover-text-background-radius, var(--framer-link-text-background-radius, var(--framer-text-background-radius, initial)));
+    padding: var(--framer-link-hover-text-background-padding, var(--framer-link-text-background-padding, var(--framer-text-background-padding, initial)))
+}
+
+a.framer-text:hover,
+span.framer-text[data-nested-link]:hover {
+    text-decoration-line: var(--framer-link-hover-text-decoration, var(--framer-blockquote-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, initial))));
+    text-decoration-style: var(--framer-link-hover-text-decoration-style, var(--framer-blockquote-text-decoration-style, var(--framer-link-text-decoration-style, var(--framer-text-decoration-style, initial))));
+    text-decoration-color: var(--framer-link-hover-text-decoration-color, var(--framer-blockquote-text-decoration-color, var(--framer-link-text-decoration-color, var(--framer-text-decoration-color, initial))));
+    text-decoration-thickness: var(--framer-link-hover-text-decoration-thickness, var(--framer-blockquote-text-decoration-thickness, var(--framer-link-text-decoration-thickness, var(--framer-text-decoration-thickness, initial))));
+    text-decoration-skip-ink: var(--framer-link-hover-text-decoration-skip-ink, var(--framer-blockquote-text-decoration-skip-ink, var(--framer-link-text-decoration-skip-ink, var(--framer-text-decoration-skip-ink, initial))));
+    text-underline-offset: var(--framer-link-hover-text-decoration-offset, var(--framer-blockquote-text-decoration-offset, var(--framer-link-text-decoration-offset, var(--framer-text-decoration-offset, initial))))
+}
+
+@supports not (color: color(display-p3 1 1 1)) {
+
+    a.framer-text:hover,
+    a.framer-text:hover span.framer-text:not([data-text-fill]),
+    span.framer-text[data-nested-link]:hover,
+    span.framer-text[data-nested-link]:hover span.framer-text:not([data-text-fill]) {
+        color: var(--framer-link-hover-text-color-rgb, var(--framer-link-hover-text-color, var(--framer-blockquote-text-color-rgb, var(--framer-blockquote-text-color, var(--framer-link-text-color-rgb, var(--framer-link-text-color, var(--framer-text-color-rgb, var(--framer-text-color, #000))))))));
+        background-color: var(--framer-link-hover-text-background-color-rgb, var(--framer-link-hover-text-background-color, var(--framer-link-text-background-color-rgb, var(--framer-link-text-background-color, var(--framer-text-background-color-rgb, var(--framer-text-background-color, initial))))))
+    }
+}
+
+code.framer-text a.framer-text:hover,
+code.framer-text a.framer-text:hover span.framer-text:not([data-text-fill]),
+code.framer-text span.framer-text[data-nested-link]:hover,
+code.framer-text span.framer-text[data-nested-link]:hover span.framer-text:not([data-text-fill]) {
+    font-family: var(var(--framer-code-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)));
+    font-style: var(--framer-blockquote-font-style, var(--framer-code-font-style, var(--framer-font-style, normal)));
+    font-weight: var(--framer-blockquote-font-weight, var(--framer-code-font-weight, var(--framer-font-weight, 400)));
+    color: var(--framer-link-hover-text-color, var(--framer-blockquote-text-color, var(--framer-link-text-color, var(--framer-code-text-color, var(--framer-text-color, #000)))));
+    font-size: calc(var(--framer-link-hover-font-size, var(--framer-blockquote-font-size, var(--framer-link-font-size, var(--framer-font-size, 16px)))) * var(--framer-font-size-scale, 1))
+}
+
+@supports not (color: color(display-p3 1 1 1)) {
+
+    code.framer-text a.framer-text:hover,
+    code.framer-text a.framer-text:hover span.framer-text:not([data-text-fill]),
+    code.framer-text span.framer-text[data-nested-link]:hover,
+    code.framer-text span.framer-text[data-nested-link]:hover span.framer-text:not([data-text-fill]) {
+        color: var(--framer-link-hover-text-color-rgb, var(--framer-link-hover-text-color, var(--framer-blockquote-text-color-rgb, var(--framer-blockquote-text-color, var(--framer-link-text-color-rgb, var(--framer-link-text-color, var(--framer-text-color-rgb, var(--framer-text-color, #000))))))))
+    }
+}
+
+a.framer-text[data-framer-page-link-current],
+a.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]),
+span.framer-text[data-framer-page-link-current],
+span.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]) {
+    font-family: var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)));
+    font-style: var(--framer-link-current-font-style, var(--framer-link-font-style, var(--framer-font-style, normal)));
+    font-weight: var(--framer-link-current-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400)));
+    color: var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-text-color, #000)));
+    font-size: calc(var(--framer-link-current-font-size, var(--framer-link-font-size, var(--framer-font-size, 16px))) * var(--framer-font-size-scale, 1));
+    text-transform: var(--framer-link-current-text-transform, var(--framer-link-text-transform, var(--framer-text-transform, none)));
+    background-color: var(--framer-link-current-text-background-color, var(--framer-link-text-background-color, var(--framer-text-background-color, initial)));
+    border-radius: var(--framer-link-current-text-background-radius, var(--framer-link-text-background-radius, var(--framer-text-background-radius, initial)));
+    padding: var(--framer-link-current-text-background-padding, var(--framer-link-text-background-padding, var(--framer-text-background-padding, initial)))
+}
+
+a.framer-text[data-framer-page-link-current],
+span.framer-text[data-framer-page-link-current] {
+    text-decoration-line: var(--framer-link-current-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, initial)));
+    text-decoration-style: var(--framer-link-current-text-decoration-style, var(--framer-link-text-decoration-style, var(--framer-text-decoration-style, initial)));
+    text-decoration-color: var(--framer-link-current-text-decoration-color, var(--framer-link-text-decoration-color, var(--framer-text-decoration-color, initial)));
+    text-decoration-thickness: var(--framer-link-current-text-decoration-thickness, var(--framer-link-text-decoration-thickness, var(--framer-text-decoration-thickness, initial)));
+    text-decoration-skip-ink: var(--framer-link-current-text-decoration-skip-ink, var(--framer-link-text-decoration-skip-ink, var(--framer-text-decoration-skip-ink, initial)));
+    text-underline-offset: var(--framer-link-current-text-decoration-offset, var(--framer-link-text-decoration-offset, var(--framer-text-decoration-offset, initial)))
+}
+
+@supports not (color: color(display-p3 1 1 1)) {
+
+    a.framer-text[data-framer-page-link-current],
+    a.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]),
+    span.framer-text[data-framer-page-link-current],
+    span.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]) {
+        color: var(--framer-link-current-text-color-rgb, var(--framer-link-current-text-color, var(--framer-link-text-color-rgb, var(--framer-link-text-color, var(--framer-text-color-rgb, var(--framer-text-color, #000))))));
+        background-color: var(--framer-link-current-text-background-color-rgb, var(--framer-link-current-text-background-color, var(--framer-link-text-background-color-rgb, var(--framer-link-text-background-color, var(--framer-text-background-color-rgb, var(--framer-text-background-color, initial))))))
+    }
+}
+
+code.framer-text a.framer-text[data-framer-page-link-current],
+code.framer-text a.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]),
+code.framer-text span.framer-text[data-framer-page-link-current],
+code.framer-text span.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]) {
+    font-family: var(--framer-code-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif));
+    font-style: var(--framer-code-font-style, var(--framer-font-style, normal));
+    font-weight: var(--framer-code-font-weight, var(--framer-font-weight, 400));
+    color: var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-code-text-color, var(--framer-text-color, #000))));
+    font-size: calc(var(--framer-link-current-font-size, var(--framer-link-font-size, var(--framer-font-size, 16px))) * var(--framer-font-size-scale, 1))
+}
+
+@supports not (color: color(display-p3 1 1 1)) {
+
+    code.framer-text a.framer-text[data-framer-page-link-current],
+    code.framer-text a.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]),
+    code.framer-text span.framer-text[data-framer-page-link-current],
+    code.framer-text span.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]) {
+        color: var(--framer-link-current-text-color-rgb, var(--framer-link-current-text-color, var(--framer-link-text-color-rgb, var(--framer-link-text-color, var(--framer-code-text-color-rgb, var(--framer-code-text-color, var(--framer-text-color-rgb, var(--framer-text-color, #000))))))));
+        background-color: var(--framer-link-current-text-background-color-rgb, var(--framer-link-current-text-background-color, var(--framer-link-text-background-color-rgb, var(--framer-link-text-background-color, var(--framer-text-background-color-rgb, var(--framer-text-background-color, initial))))))
+    }
+}
+
+a.framer-text[data-framer-page-link-current]:hover,
+a.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]),
+span.framer-text[data-framer-page-link-current]:hover,
+span.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]) {
+    font-family: var(--framer-link-hover-font-family, var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif))));
+    font-style: var(--framer-link-hover-font-style, var(--framer-link-current-font-style, var(--framer-link-font-style, var(--framer-font-style, normal))));
+    font-weight: var(--framer-link-hover-font-weight, var(--framer-link-current-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400))));
+    color: var(--framer-link-hover-text-color, var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-text-color, #000))));
+    font-size: calc(var(--framer-link-hover-font-size, var(--framer-link-current-font-size, var(--framer-link-font-size, var(--framer-font-size, 16px)))) * var(--framer-font-size-scale, 1));
+    text-transform: var(--framer-link-hover-text-transform, var(--framer-link-current-text-transform, var(--framer-link-text-transform, var(--framer-text-transform, none))));
+    background-color: var(--framer-link-hover-text-background-color, var(--framer-link-current-text-background-color, var(--framer-link-text-background-color, var(--framer-text-background-color, initial))));
+    border-radius: var(--framer-link-hover-text-background-radius, var(--framer-link-current-text-background-radius, var(--framer-link-text-background-radius, var(--framer-text-background-radius, initial))));
+    padding: var(--framer-link-hover-text-background-padding, var(--framer-link-current-text-background-padding, var(--framer-link-text-background-padding, var(--framer-text-background-padding, initial))))
+}
+
+a.framer-text[data-framer-page-link-current]:hover,
+span.framer-text[data-framer-page-link-current]:hover {
+    text-decoration-line: var(--framer-link-hover-text-decoration, var(--framer-link-current-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, initial))));
+    text-decoration-style: var(--framer-link-hover-text-decoration-style, var(--framer-link-current-text-decoration-style, var(--framer-link-text-decoration-style, var(--framer-text-decoration-style, initial))));
+    text-decoration-color: var(--framer-link-hover-text-decoration-color, var(--framer-link-current-text-decoration-color, var(--framer-link-text-decoration-color, var(--framer-text-decoration-color, initial))));
+    text-decoration-thickness: var(--framer-link-hover-text-decoration-thickness, var(--framer-link-current-text-decoration-thickness, var(--framer-link-text-decoration-thickness, var(--framer-text-decoration-thickness, initial))));
+    text-decoration-skip-ink: var(--framer-link-hover-text-decoration-skip-ink, var(--framer-link-current-text-decoration-skip-ink, var(--framer-link-text-decoration-skip-ink, var(--framer-text-decoration-skip-ink, initial))));
+    text-underline-offset: var(--framer-link-hover-text-decoration-offset, var(--framer-link-current-text-decoration-offset, var(--framer-link-text-decoration-offset, var(--framer-text-decoration-offset, initial))))
+}
+
+@supports not (color: color(display-p3 1 1 1)) {
+
+    a.framer-text[data-framer-page-link-current]:hover,
+    a.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]),
+    span.framer-text[data-framer-page-link-current]:hover,
+    span.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]) {
+        color: var(--framer-link-hover-text-color-rgb, var(--framer-link-hover-text-color, var(--framer-link-current-text-color-rgb, var(--framer-link-current-text-color, var(--framer-link-text-color-rgb, var(--framer-link-text-color, var(--framer-code-text-color-rgb, var(--framer-code-text-color, var(--framer-text-color-rgb, var(--framer-text-color, #000))))))))));
+        background-color: var(--framer-link-hover-text-background-color-rgb, var(--framer-link-hover-text-background-color, var(--framer-link-current-text-background-color-rgb, var(--framer-link-current-text-background-color, var(--framer-link-text-background-color-rgb, var(--framer-link-text-background-color, var(--framer-text-background-color-rgb, var(--framer-text-background-color, initial))))))))
+    }
+}
+
+code.framer-text a.framer-text[data-framer-page-link-current]:hover,
+code.framer-text a.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]),
+code.framer-text span.framer-text[data-framer-page-link-current]:hover,
+code.framer-text span.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]) {
+    font-family: var(--framer-code-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif));
+    font-style: var(--framer-code-font-style, var(--framer-font-style, normal));
+    font-weight: var(--framer-code-font-weight, var(--framer-font-weight, 400));
+    color: var(--framer-link-hover-text-color, var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-code-text-color, var(--framer-text-color, #000)))));
+    font-size: calc(var(--framer-link-hover-font-size, var(--framer-link-current-font-size, var(--framer-link-font-size, var(--framer-font-size, 16px)))) * var(--framer-font-size-scale, 1));
+    background-color: var(--framer-link-hover-text-background-color, var(--framer-link-current-text-background-color, var(--framer-link-text-background-color, var(--framer-text-background-color, initial))));
+    border-radius: var(--framer-link-hover-text-background-radius, var(--framer-link-current-text-background-radius, var(--framer-link-text-background-radius, var(--framer-text-background-radius, initial))));
+    padding: var(--framer-link-hover-text-background-padding, var(--framer-link-current-text-background-padding, var(--framer-link-text-background-padding, var(--framer-text-background-padding, initial))))
+}
+
+@supports not (color: color(display-p3 1 1 1)) {
+
+    code.framer-text a.framer-text[data-framer-page-link-current]:hover,
+    code.framer-text a.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]),
+    code.framer-text span.framer-text[data-framer-page-link-current]:hover,
+    code.framer-text span.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]) {
+        color: var(--framer-link-hover-text-color-rgb, var(--framer-link-hover-text-color, var(--framer-link-current-text-color-rgb, var(--framer-link-current-text-color, var(--framer-link-text-color-rgb, var(--framer-link-text-color, var(--framer-code-text-color-rgb, var(--framer-code-text-color, var(--framer-text-color-rgb, var(--framer-text-color, #000))))))))));
+        background-color: var(--framer-link-hover-text-background-color-rgb, var(--framer-link-hover-text-background-color, var(--framer-link-current-text-background-color-rgb, var(--framer-link-current-text-background-color, var(--framer-link-text-background-color-rgb, var(--framer-link-text-background-color, var(--framer-text-background-color-rgb, var(--framer-text-background-color, initial))))))))
+    }
+}
+
+.framer-image.framer-text {
+    display: block;
+    max-width: 100%;
+    height: auto
+}
+
+.text-styles-preset-reset.framer-text {
+    --framer-font-family: Inter, Inter Placeholder, sans-serif;
+    --framer-font-style: normal;
+    --framer-font-weight: 500;
+    --framer-text-color: #000;
+    --framer-font-size: 16px;
+    --framer-letter-spacing: 0;
+    --framer-text-transform: none;
+    --framer-text-decoration: none;
+    --framer-text-decoration-style: none;
+    --framer-text-decoration-color: none;
+    --framer-text-decoration-thickness: none;
+    --framer-text-decoration-skip-ink: none;
+    --framer-text-decoration-offset: none;
+    --framer-line-height: 1.2em;
+    --framer-text-alignment: start;
+    --framer-font-open-type-features: normal;
+    --framer-text-background-color: initial;
+    --framer-text-background-radius: initial;
+    --framer-text-background-padding: initial
+}
+
+ol.framer-text {
+    --list-style-type: decimal
+}
+
+ul.framer-text,
+ol.framer-text {
+    padding-left: 3ch;
+    position: relative
+}
+
+li.framer-text {
+    counter-increment: list-item;
+    list-style: none
+}
+
+ol.framer-text>li.framer-text:before {
+    position: absolute;
+    left: 0;
+    content: counter(list-item, var(--list-style-type)) ".";
+    font-variant-numeric: tabular-nums
+}
+
+ol.framer-text>li.framer-text:nth-last-child(n+100),
+ol.framer-text>li.framer-text:nth-last-child(n+100)~li {
+    padding-left: 1ch
+}
+
+ol.framer-text>li.framer-text:nth-last-child(n+1000),
+ol.framer-text>li.framer-text:nth-last-child(n+1000)~li {
+    padding-left: 2ch
+}
+
+ol.framer-text>li.framer-text:nth-last-child(n+10000),
+ol.framer-text>li.framer-text:nth-last-child(n+10000)~li {
+    padding-left: 3ch
+}
+
+ol.framer-text>li.framer-text:nth-last-child(n+100000),
+ol.framer-text>li.framer-text:nth-last-child(n+100000)~li {
+    padding-left: 4ch
+}
+
+ol.framer-text>li.framer-text:nth-last-child(n+1000000),
+ol.framer-text>li.framer-text:nth-last-child(n+1000000)~li {
+    padding-left: 5ch
+}
+
+ul.framer-text>li.framer-text:before {
+    position: absolute;
+    left: 0;
+    content: "\2022"
+}
+
+.framer-table-wrapper {
+    overflow-x: auto
+}
+
+table.framer-text,
+.framer-table-wrapper table.framer-text {
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: auto;
+    word-break: normal;
+    width: 100%
+}
+
+td.framer-text,
+th.framer-text {
+    min-width: 16ch;
+    vertical-align: top
+}
+
+.framer-text-module[style*=aspect-ratio]>:first-child {
+    width: 100%
+}
+
+@supports not (aspect-ratio: 1) {
+    .framer-text-module[style*=aspect-ratio] {
+        position: relative
+    }
+}
+
+@supports not (aspect-ratio: 1) {
+    .framer-text-module[style*=aspect-ratio]:before {
+        content: "";
+        display: block;
+        padding-bottom: calc(100% / calc(var(--aspect-ratio)))
+    }
+}
+
+@supports not (aspect-ratio: 1) {
+    .framer-text-module[style*=aspect-ratio]>:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%
+    }
+}
+
+[data-framer-component-type=DeprecatedRichText] {
+    cursor: inherit
+}
+
+[data-framer-component-type=DeprecatedRichText] .text-styles-preset-reset {
+    --framer-font-family: Inter, Inter Placeholder, sans-serif;
+    --framer-font-style: normal;
+    --framer-font-weight: 500;
+    --framer-text-color: #000;
+    --framer-font-size: 16px;
+    --framer-letter-spacing: 0;
+    --framer-text-transform: none;
+    --framer-text-decoration: none;
+    --framer-line-height: 1.2em;
+    --framer-text-alignment: start;
+    --framer-font-open-type-features: normal;
+    --font-variation-settings: normal
+}
+
+[data-framer-component-type=DeprecatedRichText] p,
+[data-framer-component-type=DeprecatedRichText] div,
+[data-framer-component-type=DeprecatedRichText] h1,
+[data-framer-component-type=DeprecatedRichText] h2,
+[data-framer-component-type=DeprecatedRichText] h3,
+[data-framer-component-type=DeprecatedRichText] h4,
+[data-framer-component-type=DeprecatedRichText] h5,
+[data-framer-component-type=DeprecatedRichText] h6 {
+    margin: 0;
+    padding: 0
+}
+
+[data-framer-component-type=DeprecatedRichText] p,
+[data-framer-component-type=DeprecatedRichText] div,
+[data-framer-component-type=DeprecatedRichText] h1,
+[data-framer-component-type=DeprecatedRichText] h2,
+[data-framer-component-type=DeprecatedRichText] h3,
+[data-framer-component-type=DeprecatedRichText] h4,
+[data-framer-component-type=DeprecatedRichText] h5,
+[data-framer-component-type=DeprecatedRichText] h6,
+[data-framer-component-type=DeprecatedRichText] li,
+[data-framer-component-type=DeprecatedRichText] ol,
+[data-framer-component-type=DeprecatedRichText] ul,
+[data-framer-component-type=DeprecatedRichText] span:not([data-text-fill]) {
+    font-family: var(--framer-font-family, Inter, Inter Placeholder, sans-serif);
+    font-style: var(--framer-font-style, normal);
+    font-weight: var(--framer-font-weight, 400);
+    color: var(--framer-text-color, #000);
+    font-size: var(--framer-font-size, 16px);
+    letter-spacing: var(--framer-letter-spacing, 0);
+    text-transform: var(--framer-text-transform, none);
+    text-decoration: var(--framer-text-decoration, none);
+    line-height: var(--framer-line-height, 1.2em);
+    text-align: var(--framer-text-alignment, start)
+}
+
+[data-framer-component-type=DeprecatedRichText] p:not(:first-child),
+[data-framer-component-type=DeprecatedRichText] div:not(:first-child),
+[data-framer-component-type=DeprecatedRichText] h1:not(:first-child),
+[data-framer-component-type=DeprecatedRichText] h2:not(:first-child),
+[data-framer-component-type=DeprecatedRichText] h3:not(:first-child),
+[data-framer-component-type=DeprecatedRichText] h4:not(:first-child),
+[data-framer-component-type=DeprecatedRichText] h5:not(:first-child),
+[data-framer-component-type=DeprecatedRichText] h6:not(:first-child),
+[data-framer-component-type=DeprecatedRichText] ol:not(:first-child),
+[data-framer-component-type=DeprecatedRichText] ul:not(:first-child),
+[data-framer-component-type=DeprecatedRichText] .framer-image:not(:first-child) {
+    margin-top: var(--framer-paragraph-spacing, 0)
+}
+
+[data-framer-component-type=DeprecatedRichText] span[data-text-fill] {
+    display: inline-block;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+[data-framer-component-type=DeprecatedRichText] a,
+[data-framer-component-type=DeprecatedRichText] a span:not([data-text-fill]) {
+    font-family: var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif));
+    font-style: var(--framer-link-font-style, var(--framer-font-style, normal));
+    font-weight: var(--framer-link-font-weight, var(--framer-font-weight, 400));
+    color: var(--framer-link-text-color, var(--framer-text-color, #000));
+    font-size: var(--framer-link-font-size, var(--framer-font-size, 16px));
+    text-transform: var(--framer-link-text-transform, var(--framer-text-transform, none));
+    text-decoration: var(--framer-link-text-decoration, var(--framer-text-decoration, none))
+}
+
+[data-framer-component-type=DeprecatedRichText] a:hover,
+[data-framer-component-type=DeprecatedRichText] a:hover span:not([data-text-fill]) {
+    font-family: var(--framer-link-hover-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)));
+    font-style: var(--framer-link-hover-font-style, var(--framer-link-font-style, var(--framer-font-style, normal)));
+    font-weight: var(--framer-link-hover-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400)));
+    color: var(--framer-link-hover-text-color, var(--framer-link-text-color, var(--framer-text-color, #000)));
+    font-size: var(--framer-link-hover-font-size, var(--framer-link-font-size, var(--framer-font-size, 16px)));
+    text-transform: var(--framer-link-hover-text-transform, var(--framer-link-text-transform, var(--framer-text-transform, none)));
+    text-decoration: var(--framer-link-hover-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, none)))
+}
+
+[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current],
+[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current] span:not([data-text-fill]):not([data-nested-link]) {
+    font-family: var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif)));
+    font-style: var(--framer-link-current-font-style, var(--framer-link-font-style, var(--framer-font-style, normal)));
+    font-weight: var(--framer-link-current-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400)));
+    color: var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-text-color, #000)));
+    font-size: var(--framer-link-current-font-size, var(--framer-link-font-size, var(--framer-font-size, 16px)));
+    text-transform: var(--framer-link-current-text-transform, var(--framer-link-text-transform, var(--framer-text-transform, none)));
+    text-decoration: var(--framer-link-current-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, none)))
+}
+
+[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current]:hover,
+[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current]:hover span:not([data-text-fill]):not([data-nested-link]) {
+    font-family: var(--framer-link-hover-font-family, var(--framer-link-current-font-family, var(--framer-link-font-family, var(--framer-font-family, Inter, Inter Placeholder, sans-serif))));
+    font-style: var(--framer-link-hover-font-style, var(--framer-link-current-font-style, var(--framer-link-font-style, var(--framer-font-style, normal))));
+    font-weight: var(--framer-link-hover-font-weight, var(--framer-link-current-font-weight, var(--framer-link-font-weight, var(--framer-font-weight, 400))));
+    color: var(--framer-link-hover-text-color, var(--framer-link-current-text-color, var(--framer-link-text-color, var(--framer-text-color, #000))));
+    font-size: var(--framer-link-hover-font-size, var(--framer-link-current-font-size, var(--framer-link-font-size, var(--framer-font-size, 16px))));
+    text-transform: var(--framer-link-hover-text-transform, var(--framer-link-current-text-transform, var(--framer-link-text-transform, var(--framer-text-transform, none))));
+    text-decoration: var(--framer-link-hover-text-decoration, var(--framer-link-current-text-decoration, var(--framer-link-text-decoration, var(--framer-text-decoration, none))))
+}
+
+[data-framer-component-type=DeprecatedRichText] strong {
+    font-weight: bolder
+}
+
+[data-framer-component-type=DeprecatedRichText] em {
+    font-style: italic
+}
+
+[data-framer-component-type=DeprecatedRichText] .framer-image {
+    display: block;
+    max-width: 100%;
+    height: auto
+}
+
+[data-framer-component-type=DeprecatedRichText] ul,
+[data-framer-component-type=DeprecatedRichText] ol {
+    display: table;
+    width: 100%;
+    padding-left: 0;
+    margin: 0
+}
+
+[data-framer-component-type=DeprecatedRichText] li {
+    display: table-row;
+    counter-increment: list-item;
+    list-style: none
+}
+
+[data-framer-component-type=DeprecatedRichText] ol>li:before {
+    display: table-cell;
+    width: 2.25ch;
+    box-sizing: border-box;
+    padding-right: .75ch;
+    content: counter(list-item) ".";
+    white-space: nowrap
+}
+
+[data-framer-component-type=DeprecatedRichText] ul>li:before {
+    display: table-cell;
+    width: 2.25ch;
+    box-sizing: border-box;
+    padding-right: .75ch;
+    content: "\2022"
+}
+
+:not([data-framer-generated])>[data-framer-stack-content-wrapper]>*,
+:not([data-framer-generated])>[data-framer-stack-content-wrapper]>[data-framer-component-type],
+:not([data-framer-generated])>[data-framer-stack-content-wrapper]>[data-framer-legacy-stack-gap-enabled]>*,
+:not([data-framer-generated])>[data-framer-stack-content-wrapper]>[data-framer-legacy-stack-gap-enabled]>[data-framer-component-type] {
+    position: relative
+}
+
+.flexbox-gap-not-supported [data-framer-legacy-stack-gap-enabled=true]>*,
+[data-framer-legacy-stack-gap-enabled=true][data-framer-stack-flexbox-gap=false] {
+    margin-top: calc(var(--stack-gap-y) / 2);
+    margin-bottom: calc(var(--stack-gap-y) / 2);
+    margin-right: calc(var(--stack-gap-x) / 2);
+    margin-left: calc(var(--stack-gap-x) / 2)
+}
+
+[data-framer-stack-content-wrapper][data-framer-stack-gap-enabled=true] {
+    row-gap: var(--stack-native-row-gap);
+    column-gap: var(--stack-native-column-gap)
+}
+
+.flexbox-gap-not-supported [data-framer-stack-content-wrapper][data-framer-stack-gap-enabled=true] {
+    row-gap: unset;
+    column-gap: unset
+}
+
+.flexbox-gap-not-supported [data-framer-stack-direction-reverse=false] [data-framer-legacy-stack-gap-enabled=true]>*:first-child,
+[data-framer-stack-direction-reverse=false] [data-framer-legacy-stack-gap-enabled=true][data-framer-stack-flexbox-gap=false]>*:first-child,
+.flexbox-gap-not-supported [data-framer-stack-direction-reverse=true] [data-framer-legacy-stack-gap-enabled=true]>*:last-child,
+[data-framer-stack-direction-reverse=true] [data-framer-legacy-stack-gap-enabled=true][data-framer-stack-flexbox-gap=false]>*:last-child {
+    margin-top: 0;
+    margin-left: 0
+}
+
+.flexbox-gap-not-supported [data-framer-stack-direction-reverse=false] [data-framer-legacy-stack-gap-enabled=true]>*:last-child,
+[data-framer-stack-direction-reverse=false] [data-framer-legacy-stack-gap-enabled=true][data-framer-stack-flexbox-gap=false]>*:last-child,
+.flexbox-gap-not-supported [data-framer-stack-direction-reverse=true] [data-framer-legacy-stack-gap-enabled=true]>*:first-child,
+[data-framer-stack-direction-reverse=true] [data-framer-legacy-stack-gap-enabled=true][data-framer-stack-flexbox-gap=false]>*:first-child {
+    margin-right: 0;
+    margin-bottom: 0
+}
+
+NavigationContainer [data-framer-component-type=NavigationContainer]>*,
+[data-framer-component-type=NavigationContainer]>[data-framer-component-type] {
+    position: relative
+}
+
+[data-framer-component-type=Scroll]::-webkit-scrollbar {
+    display: none
+}
+
+[data-framer-component-type=ScrollContentWrapper]>* {
+    position: relative
+}
+
+[data-framer-component-type=NativeScroll] {
+    -webkit-overflow-scrolling: touch
+}
+
+[data-framer-component-type=NativeScroll]>* {
+    position: relative
+}
+
+[data-framer-component-type=NativeScroll].direction-both {
+    overflow-x: auto;
+    overflow-y: auto
+}
+
+[data-framer-component-type=NativeScroll].direction-vertical {
+    overflow-x: hidden;
+    overflow-y: auto
+}
+
+[data-framer-component-type=NativeScroll].direction-horizontal {
+    overflow-x: auto;
+    overflow-y: hidden
+}
+
+[data-framer-component-type=NativeScroll].direction-vertical>* {
+    width: 100% !important
+}
+
+[data-framer-component-type=NativeScroll].direction-horizontal>* {
+    height: 100% !important
+}
+
+[data-framer-component-type=NativeScroll].scrollbar-hidden::-webkit-scrollbar {
+    display: none
+}
+
+[data-framer-component-type=PageContentWrapper]>*,
+[data-framer-component-type=PageContentWrapper]>[data-framer-component-type] {
+    position: relative
+}
+
+[data-framer-component-type=DeviceComponent].no-device>* {
+    width: 100% !important;
+    height: 100% !important
+}
+
+[data-is-present=false],
+[data-is-present=false] * {
+    pointer-events: none !important
+}
+
+[data-framer-cursor=pointer] {
+    cursor: pointer
+}
+
+[data-framer-cursor=grab] {
+    cursor: grab
+}
+
+[data-framer-cursor=grab]:active {
+    cursor: grabbing
+}
+
+[data-framer-component-type=Frame] *,
+[data-framer-component-type=Stack] * {
+    pointer-events: auto
+}
+
+[data-framer-generated] * {
+    pointer-events: unset
+}
+
+.svgContainer svg {
+    display: block
+}
+
+[data-reset=button] {
+    border-width: 0;
+    padding: 0;
+    background: none
+}
+
+[data-hide-scrollbars=true]::-webkit-scrollbar {
+    width: 0px;
+    height: 0px
+}
+
+[data-hide-scrollbars=true]::-webkit-scrollbar-thumb {
+    background: transparent
+}
+
+[data-hide-scrollbars=true] {
+    scrollbar-width: none
+}
+
+@supports (not (overflow: clip)) {
+    :root {
+        --overflow-clip-fallback: hidden
+    }
+}
+
+.framer-cursor-none,
+.framer-cursor-none * {
+    cursor: none !important
+}
+
+.framer-pointer-events-none,
+.framer-pointer-events-none * {
+    pointer-events: none !important
+}
+
+.framer-LDB6i.framer-lux5qc,
+.framer-LDB6i .framer-lux5qc {
+    display: block
+}
+
+.framer-LDB6i.framer-72rtr7 {
+    align-content: center;
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0px;
+    height: min-content;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 1200px
+}
+
+.framer-LDB6i .framer-lvnn9y,
+.framer-LDB6i .framer-e65a7i {
+    align-content: center;
+    align-items: center;
+    background-color: #fedf07;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 120px 0 0;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-twz0h2,
+.framer-LDB6i .framer-62e2fu,
+.framer-LDB6i .framer-vkylh5,
+.framer-LDB6i .framer-zn487e {
+    align-content: center;
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: center;
+    left: calc(50.00000000000002% - 100.08333333333333% / 2);
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+.framer-LDB6i .framer-1cevuf8-container,
+.framer-LDB6i .framer-oyumz2-container,
+.framer-LDB6i .framer-11nps8t-container,
+.framer-LDB6i .framer-7wseoa-container,
+.framer-LDB6i .framer-10geasi-container {
+    flex: 1 0 0px;
+    height: 100%;
+    position: relative;
+    width: 1px
+}
+
+.framer-LDB6i .framer-aj2alp,
+.framer-LDB6i .framer-1ufdbl2,
+.framer-LDB6i .framer-pgeqbu {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-1m1gpqt,
+.framer-LDB6i .framer-1q0ve3y {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 19px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 50px;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-s10i07 {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: 579px;
+    justify-content: center;
+    overflow: hidden;
+    padding: 15px 0;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-1plledi {
+    --border-bottom-width: 17px;
+    --border-color: #ffffff;
+    --border-left-width: 17px;
+    --border-right-width: 17px;
+    --border-style: solid;
+    --border-top-width: 17px;
+    align-content: center;
+    align-items: center;
+    background-color: #65f00e80;
+    border-radius: 40px;
+    box-shadow: 12px 15px 2px #00000070;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: 59%;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: min-content;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-ml5jd {
+    aspect-ratio: 1 / 1;
+    flex: none;
+    height: 100%;
+    overflow: visible;
+    position: relative;
+    width: var(--framer-aspect-ratio-supported, 325px)
+}
+
+.framer-LDB6i .framer-vts41u,
+.framer-LDB6i .framer-5jmfu0 {
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    cursor: default;
+    flex: none;
+    height: 154px;
+    position: relative;
+    text-shadow: 5px 1px 2px rgba(0, 0, 0, .3);
+    white-space: pre-wrap;
+    width: 100%;
+    will-change: var(--framer-will-change-effect-override, transform);
+    word-break: break-word;
+    word-wrap: break-word
+}
+
+.framer-LDB6i .framer-18360z3 {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-g4kiye {
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    cursor: default;
+    flex: none;
+    height: auto;
+    position: relative;
+    text-shadow: 5px 1px 2px rgba(0, 0, 0, .3);
+    white-space: pre;
+    width: auto;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-oyttml,
+.framer-LDB6i .framer-idq9s4 {
+    align-content: center;
+    align-items: center;
+    border-radius: 25px;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: visible;
+    padding: 7px 14px;
+    position: relative;
+    width: min-content;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-bu9n4l-container,
+.framer-LDB6i .framer-1kzjlaf-container {
+    flex: none;
+    height: auto;
+    position: relative;
+    width: auto
+}
+
+.framer-LDB6i .framer-19u5h9o {
+    --border-bottom-width: 10px;
+    --border-color: #ffffff;
+    --border-left-width: 10px;
+    --border-right-width: 10px;
+    --border-style: solid;
+    --border-top-width: 10px;
+    aspect-ratio: 1 / 1;
+    border-radius: 30px;
+    flex: none;
+    height: 50%;
+    overflow: visible;
+    position: relative;
+    width: var(--framer-aspect-ratio-supported, 200px);
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-u5sri8 {
+    aspect-ratio: 1 / 1;
+    flex: none;
+    height: 100%;
+    left: 0;
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    width: var(--framer-aspect-ratio-supported, 200px)
+}
+
+.framer-LDB6i .framer-bfyq6h,
+.framer-LDB6i .framer-vnt590 {
+    align-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-1b0tvka,
+.framer-LDB6i .framer-1qgr3i4,
+.framer-LDB6i .framer-1l8y1ar,
+.framer-LDB6i .framer-hhbin0 {
+    --border-bottom-width: 5px;
+    --border-color: #222222;
+    --border-left-width: 2px;
+    --border-right-width: 5px;
+    --border-style: solid;
+    --border-top-width: 2px;
+    align-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: 50px;
+    justify-content: center;
+    overflow: hidden;
+    padding: 40px;
+    position: relative;
+    text-decoration: none;
+    width: min-content;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-xuzoli,
+.framer-LDB6i .framer-ykpl2s,
+.framer-LDB6i .framer-6xtfd1,
+.framer-LDB6i .framer-cpzgqq,
+.framer-LDB6i .framer-whu8gc {
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    cursor: default;
+    flex: none;
+    height: auto;
+    position: relative;
+    white-space: pre;
+    width: auto;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-1nhjxod-container,
+.framer-LDB6i .framer-19atpqf-container,
+.framer-LDB6i .framer-1a3mo24-container {
+    flex: none;
+    height: 200px;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-1az9uba {
+    aspect-ratio: 2.482142857142857 / 1;
+    border-radius: 15px;
+    height: var(--framer-aspect-ratio-supported, 56px);
+    overflow: visible;
+    position: relative;
+    width: 139px
+}
+
+.framer-LDB6i .framer-1ekshrn-container {
+    flex: none;
+    height: auto;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10
+}
+
+.framer-LDB6i .framer-brqvez,
+.framer-LDB6i .framer-1x0anwk {
+    align-content: center;
+    align-items: center;
+    background-color: #fedf07;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-p6wofc {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 50px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-dhb6b4 {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 11px;
+    height: 100%;
+    justify-content: center;
+    left: calc(50.00000000000002% - 100.08333333333333% / 2);
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+.framer-LDB6i .framer-1l22o0g {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 31px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 27px;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-2x2jew {
+    --border-bottom-width: 17px;
+    --border-color: #ffffff;
+    --border-left-width: 17px;
+    --border-right-width: 17px;
+    --border-style: solid;
+    --border-top-width: 17px;
+    align-content: center;
+    align-items: center;
+    background-color: #404f3f3d;
+    border-radius: 40px;
+    box-shadow: 12px 15px 2px #00000070;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 40px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 50px;
+    position: relative;
+    width: 100%;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-bmeylf,
+.framer-LDB6i .framer-1i3wmaq,
+.framer-LDB6i .framer-3hng8w,
+.framer-LDB6i .framer-d7yoqb,
+.framer-LDB6i .framer-q0rdlh,
+.framer-LDB6i .framer-mpdrq3,
+.framer-LDB6i .framer-1ogsyzk,
+.framer-LDB6i .framer-pd381s,
+.framer-LDB6i .framer-hjalz3,
+.framer-LDB6i .framer-22hd8m,
+.framer-LDB6i .framer-1urp394 {
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    cursor: default;
+    flex: none;
+    height: auto;
+    position: relative;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    white-space: pre;
+    width: auto
+}
+
+.framer-LDB6i .framer-1bjygmk,
+.framer-LDB6i .framer-ih8q0c {
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    cursor: default;
+    flex: none;
+    height: auto;
+    position: relative;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    white-space: pre-wrap;
+    width: 100%;
+    word-break: break-word;
+    word-wrap: break-word
+}
+
+.framer-LDB6i .framer-3k2jvj {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 57px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-1r4yraq-container {
+    flex: none;
+    height: 360px;
+    position: relative;
+    width: 640px
+}
+
+.framer-LDB6i .framer-1cbp536,
+.framer-LDB6i .framer-1wrwacd {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 50px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 142px 0;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-1ok55sp,
+.framer-LDB6i .framer-1ljve8f {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-jnqfw5 {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-do0afs {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 57px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 15px 40px;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-1mik7v0,
+.framer-LDB6i .framer-u72ep9,
+.framer-LDB6i .framer-n37win {
+    --border-bottom-width: 17px;
+    --border-color: #ffffff;
+    --border-left-width: 17px;
+    --border-right-width: 17px;
+    --border-style: solid;
+    --border-top-width: 17px;
+    align-content: center;
+    align-items: center;
+    background-color: #0505053d;
+    border-radius: 40px;
+    box-shadow: 12px 15px 2px #00000070;
+    display: flex;
+    flex: 1 0 0px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 40px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 50px;
+    position: relative;
+    width: 1px;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-1ynkqbo {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 26px;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-1nj41zi,
+.framer-LDB6i .framer-zczoag {
+    --border-bottom-width: 17px;
+    --border-color: #ffffff;
+    --border-left-width: 17px;
+    --border-right-width: 17px;
+    --border-style: solid;
+    --border-top-width: 17px;
+    background-color: #99f00e70;
+    border-radius: 40px;
+    box-shadow: 12px 15px 2px #00000070;
+    flex: none;
+    height: 135px;
+    overflow: hidden;
+    position: relative;
+    width: 138px;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-v1sldh-container {
+    aspect-ratio: 1 / 1;
+    flex: none;
+    height: 44%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--framer-aspect-ratio-supported, 60px)
+}
+
+.framer-LDB6i .framer-1onuzt6,
+.framer-LDB6i .framer-6g3oh3,
+.framer-LDB6i .framer-4b0mjd,
+.framer-LDB6i .framer-t14k0l {
+    --border-bottom-width: 17px;
+    --border-color: #ffffff;
+    --border-left-width: 17px;
+    --border-right-width: 17px;
+    --border-style: solid;
+    --border-top-width: 17px;
+    align-content: center;
+    align-items: center;
+    background-color: #5b8c0d94;
+    border-radius: 40px;
+    box-shadow: 12px 15px 2px #00000070;
+    display: flex;
+    flex: 1 0 0px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: 135px;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 1px;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-18en0lw {
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    cursor: default;
+    flex: 1 0 0px;
+    height: auto;
+    position: relative;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    white-space: pre-wrap;
+    width: 1px;
+    word-break: break-word;
+    word-wrap: break-word
+}
+
+.framer-LDB6i .framer-rkze3f,
+.framer-LDB6i .framer-hiog8n,
+.framer-LDB6i .framer-1f39b30 {
+    align-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 26px;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-qe0vw3-container {
+    aspect-ratio: 1 / 1;
+    flex: none;
+    height: var(--framer-aspect-ratio-supported, 60px);
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px
+}
+
+.framer-LDB6i .framer-hn53rm,
+.framer-LDB6i .framer-1gf8upy {
+    --border-bottom-width: 17px;
+    --border-color: #ffffff;
+    --border-left-width: 17px;
+    --border-right-width: 17px;
+    --border-style: solid;
+    --border-top-width: 17px;
+    background-color: #65f00e80;
+    border-radius: 40px;
+    box-shadow: 12px 15px 2px #00000070;
+    flex: none;
+    height: 135px;
+    overflow: hidden;
+    position: relative;
+    width: 138px;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-1rvyf43,
+.framer-LDB6i .framer-6kw1nd {
+    aspect-ratio: 1 / 1;
+    border-radius: 23px;
+    flex: none;
+    height: var(--framer-aspect-ratio-supported, 82px);
+    left: 50%;
+    overflow: visible;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 82px
+}
+
+.framer-LDB6i .framer-zf51uc {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-185tehq-container {
+    flex: none;
+    height: 500px;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-clf6j8 {
+    --border-bottom-width: 6px;
+    --border-color: #ffffff;
+    --border-left-width: 6px;
+    --border-right-width: 6px;
+    --border-style: solid;
+    --border-top-width: 6px;
+    aspect-ratio: 1 / 1;
+    border-radius: 15px;
+    height: var(--framer-aspect-ratio-supported, 343px);
+    overflow: visible;
+    position: relative;
+    width: 343px;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-1k0qxwk {
+    --border-bottom-width: 6px;
+    --border-color: #ffffff;
+    --border-left-width: 6px;
+    --border-right-width: 6px;
+    --border-style: solid;
+    --border-top-width: 6px;
+    aspect-ratio: 1 / 1;
+    border-radius: 15px;
+    height: var(--framer-aspect-ratio-supported, 351px);
+    overflow: visible;
+    position: relative;
+    width: 351px;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-k5zxl7,
+.framer-LDB6i .framer-gp041g,
+.framer-LDB6i .framer-jmj7d6,
+.framer-LDB6i .framer-s7zax1,
+.framer-LDB6i .framer-hh7imk,
+.framer-LDB6i .framer-k71o9k,
+.framer-LDB6i .framer-tflgnl,
+.framer-LDB6i .framer-1nk4v7b,
+.framer-LDB6i .framer-3tx726,
+.framer-LDB6i .framer-1isiepu,
+.framer-LDB6i .framer-1wmyx4k,
+.framer-LDB6i .framer-1ivnddw,
+.framer-LDB6i .framer-extm06 {
+    --border-bottom-width: 6px;
+    --border-color: #ffffff;
+    --border-left-width: 6px;
+    --border-right-width: 6px;
+    --border-style: solid;
+    --border-top-width: 6px;
+    aspect-ratio: 1 / 1;
+    border-radius: 15px;
+    height: var(--framer-aspect-ratio-supported, 346px);
+    overflow: visible;
+    position: relative;
+    width: 346px;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-2rzugx {
+    --border-bottom-width: 6px;
+    --border-color: #ffffff;
+    --border-left-width: 6px;
+    --border-right-width: 6px;
+    --border-style: solid;
+    --border-top-width: 6px;
+    aspect-ratio: 1 / 1;
+    border-radius: 15px;
+    height: var(--framer-aspect-ratio-supported, 338px);
+    overflow: visible;
+    position: relative;
+    width: 338px;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-ef8al6 {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 15px 0;
+    position: relative;
+    width: 100%
+}
+
+.framer-LDB6i .framer-1h7dxbr {
+    --border-bottom-width: 17px;
+    --border-color: #ffffff;
+    --border-left-width: 17px;
+    --border-right-width: 17px;
+    --border-style: solid;
+    --border-top-width: 17px;
+    background-color: #65f00e80;
+    border-radius: 40px;
+    box-shadow: 12px 15px 2px #00000070;
+    flex: none;
+    height: 211px;
+    overflow: hidden;
+    position: relative;
+    width: 182px;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i .framer-d4wmk8 {
+    aspect-ratio: 1 / 1;
+    flex: none;
+    height: var(--framer-aspect-ratio-supported, 182px);
+    left: 0;
+    overflow: visible;
+    position: absolute;
+    right: 0;
+    top: 49%;
+    transform: translateY(-50%)
+}
+
+.framer-LDB6i .framer-1vvwsnu {
+    align-content: center;
+    align-items: center;
+    background-color: #ffffff78;
+    border-radius: 20px;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    will-change: var(--framer-will-change-effect-override, transform)
+}
+
+.framer-LDB6i[data-border=true]:after,
+.framer-LDB6i [data-border=true]:after {
+    content: "";
+    border-width: var(--border-top-width, 0) var(--border-right-width, 0) var(--border-bottom-width, 0) var(--border-left-width, 0);
+    border-color: var(--border-color, none);
+    border-style: var(--border-style, none);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    border-radius: inherit;
+    pointer-events: none
+}
+
+@media (min-width: 810px) and (max-width: 1199px) {
+    .framer-LDB6i.framer-72rtr7 {
+        width: 810px
+    }
+}
+
+@media (max-width: 809px) {
+    .framer-LDB6i.framer-72rtr7 {
+        width: 390px
+    }
+
+    .framer-LDB6i .framer-1m1gpqt {
+        padding: 0 10px
+    }
+
+    .framer-LDB6i .framer-vts41u,
+    .framer-LDB6i .framer-5jmfu0 {
+        height: auto
+    }
+
+    .framer-LDB6i .framer-19u5h9o {
+        --border-bottom-width: 17px;
+        --border-left-width: 17px;
+        --border-right-width: 17px;
+        --border-top-width: 17px;
+        border-radius: 40px;
+        box-shadow: 12px 15px 2px #00000070;
+        gap: 10px;
+        overflow: hidden;
+        width: var(--framer-aspect-ratio-supported, 276px)
+    }
+
+    .framer-LDB6i .framer-u5sri8 {
+        width: var(--framer-aspect-ratio-supported, 276px)
+    }
+
+    .framer-LDB6i .framer-1l22o0g {
+        padding: 22px
+    }
+
+    .framer-LDB6i .framer-3k2jvj {
+        border-radius: 15px;
+        will-change: var(--framer-will-change-override, transform)
+    }
+
+    .framer-LDB6i .framer-1r4yraq-container {
+        height: 219px;
+        width: 375px
+    }
+
+    .framer-LDB6i .framer-do0afs {
+        flex-direction: column
+    }
+
+    .framer-LDB6i .framer-1mik7v0,
+    .framer-LDB6i .framer-u72ep9,
+    .framer-LDB6i .framer-n37win {
+        flex: none;
+        width: 100%
+    }
+
+    .framer-LDB6i .framer-1l8y1ar,
+    .framer-LDB6i .framer-hhbin0 {
+        flex: 1 0 0px;
+        width: 1px
+    }
+}
+
+.framer-xnvdj.framer-1rjyiq9,
+.framer-xnvdj .framer-1rjyiq9 {
+    display: block
+}
+
+.framer-xnvdj.framer-qtag16 {
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 6px;
+    height: min-content;
+    justify-content: center;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+    width: min-content
+}
+
+.framer-xnvdj .framer-1sks27t {
+    flex: none;
+    height: auto;
+    position: relative;
+    white-space: pre;
+    width: auto
+}
+
+.framer-xnvdj.framer-v-1kc06z0.framer-qtag16 {
+    cursor: unset;
+    justify-content: flex-start
+}
+
+.framer-ZzKG4.framer-gvhmlu,
+.framer-ZzKG4 .framer-gvhmlu {
+    display: block
+}
+
+.framer-ZzKG4.framer-tniwam {
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 6px;
+    height: min-content;
+    justify-content: center;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+    width: min-content
+}
+
+.framer-ZzKG4 .framer-1o8ebst {
+    flex: none;
+    height: auto;
+    position: relative;
+    white-space: pre;
+    width: auto
+}
+
+.framer-ZzKG4.framer-v-xs5f0d.framer-tniwam {
+    cursor: unset;
+    justify-content: flex-start
+}
+
+.framer-lUY8A .framer-styles-preset-znsc1:not(.rich-text-wrapper),
+.framer-lUY8A .framer-styles-preset-znsc1.rich-text-wrapper p {
+    --framer-font-family: "Switzer", "Switzer Placeholder", sans-serif;
+    --framer-font-family-bold: "Switzer", "Switzer Placeholder", sans-serif;
+    --framer-font-family-bold-italic: "Switzer", "Switzer Placeholder", sans-serif;
+    --framer-font-family-italic: "Switzer", "Switzer Placeholder", sans-serif;
+    --framer-font-open-type-features: normal;
+    --framer-font-size: 14px;
+    --framer-font-style: normal;
+    --framer-font-style-bold: normal;
+    --framer-font-style-bold-italic: italic;
+    --framer-font-style-italic: italic;
+    --framer-font-weight: 400;
+    --framer-font-weight-bold: 700;
+    --framer-font-weight-bold-italic: 700;
+    --framer-font-weight-italic: 400;
+    --framer-letter-spacing: -.1px;
+    --framer-line-height: 1.6em;
+    --framer-paragraph-spacing: 20px;
+    --framer-text-alignment: center;
+    --framer-text-color: rgba(255, 255, 255, .4);
+    --framer-text-decoration: none;
+    --framer-text-stroke-color: initial;
+    --framer-text-stroke-width: initial;
+    --framer-text-transform: none
+}
+
+.framer-sxRCW .framer-styles-preset-2pwb29:not(.rich-text-wrapper),
+.framer-sxRCW .framer-styles-preset-2pwb29.rich-text-wrapper p {
+    --framer-font-family: "Switzer", "Switzer Placeholder", sans-serif;
+    --framer-font-family-bold: "Switzer", "Switzer Placeholder", sans-serif;
+    --framer-font-family-bold-italic: "Switzer", "Switzer Placeholder", sans-serif;
+    --framer-font-family-italic: "Switzer", "Switzer Placeholder", sans-serif;
+    --framer-font-open-type-features: normal;
+    --framer-font-size: 18px;
+    --framer-font-style: normal;
+    --framer-font-style-bold: normal;
+    --framer-font-style-bold-italic: italic;
+    --framer-font-style-italic: italic;
+    --framer-font-weight: 400;
+    --framer-font-weight-bold: 700;
+    --framer-font-weight-bold-italic: 700;
+    --framer-font-weight-italic: 400;
+    --framer-letter-spacing: 0px;
+    --framer-line-height: 1.55em;
+    --framer-paragraph-spacing: 20px;
+    --framer-text-alignment: center;
+    --framer-text-color: #6b6e73;
+    --framer-text-decoration: none;
+    --framer-text-stroke-color: initial;
+    --framer-text-stroke-width: initial;
+    --framer-text-transform: none
+}
+
+@media (max-width: 1365px) and (min-width: 1000px) {
+
+    .framer-sxRCW .framer-styles-preset-2pwb29:not(.rich-text-wrapper),
+    .framer-sxRCW .framer-styles-preset-2pwb29.rich-text-wrapper p {
+        --framer-font-family: "Switzer", "Switzer Placeholder", sans-serif;
+        --framer-font-family-bold: "Switzer", "Switzer Placeholder", sans-serif;
+        --framer-font-family-bold-italic: "Switzer", "Switzer Placeholder", sans-serif;
+        --framer-font-family-italic: "Switzer", "Switzer Placeholder", sans-serif;
+        --framer-font-open-type-features: normal;
+        --framer-font-size: 18px;
+        --framer-font-style: normal;
+        --framer-font-style-bold: normal;
+        --framer-font-style-bold-italic: italic;
+        --framer-font-style-italic: italic;
+        --framer-font-weight: 400;
+        --framer-font-weight-bold: 700;
+        --framer-font-weight-bold-italic: 700;
+        --framer-font-weight-italic: 400;
+        --framer-letter-spacing: 0px;
+        --framer-line-height: 1.55em;
+        --framer-paragraph-spacing: 20px;
+        --framer-text-alignment: center;
+        --framer-text-color: #6b6e73;
+        --framer-text-decoration: none;
+        --framer-text-stroke-color: initial;
+        --framer-text-stroke-width: initial;
+        --framer-text-transform: none
+    }
+}
+
+@media (max-width: 999px) and (min-width: 600px) {
+
+    .framer-sxRCW .framer-styles-preset-2pwb29:not(.rich-text-wrapper),
+    .framer-sxRCW .framer-styles-preset-2pwb29.rich-text-wrapper p {
+        --framer-font-family: "Switzer", "Switzer Placeholder", sans-serif;
+        --framer-font-family-bold: "Switzer", "Switzer Placeholder", sans-serif;
+        --framer-font-family-bold-italic: "Switzer", "Switzer Placeholder", sans-serif;
+        --framer-font-family-italic: "Switzer", "Switzer Placeholder", sans-serif;
+        --framer-font-open-type-features: normal;
+        --framer-font-size: 18px;
+        --framer-font-style: normal;
+        --framer-font-style-bold: normal;
+        --framer-font-style-bold-italic: italic;
+        --framer-font-style-italic: italic;
+        --framer-font-weight: 400;
+        --framer-font-weight-bold: 700;
+        --framer-font-weight-bold-italic: 700;
+        --framer-font-weight-italic: 400;
+        --framer-letter-spacing: 0px;
+        --framer-line-height: 1.55em;
+        --framer-paragraph-spacing: 20px;
+        --framer-text-alignment: center;
+        --framer-text-color: #6b6e73;
+        --framer-text-decoration: none;
+        --framer-text-stroke-color: initial;
+        --framer-text-stroke-width: initial;
+        --framer-text-transform: none
+    }
+}
+
+@media (max-width: 599px) and (min-width: 0px) {
+
+    .framer-sxRCW .framer-styles-preset-2pwb29:not(.rich-text-wrapper),
+    .framer-sxRCW .framer-styles-preset-2pwb29.rich-text-wrapper p {
+        --framer-font-family: "Switzer", "Switzer Placeholder", sans-serif;
+        --framer-font-family-bold: "Switzer", "Switzer Placeholder", sans-serif;
+        --framer-font-family-bold-italic: "Switzer", "Switzer Placeholder", sans-serif;
+        --framer-font-family-italic: "Switzer", "Switzer Placeholder", sans-serif;
+        --framer-font-open-type-features: normal;
+        --framer-font-size: 17px;
+        --framer-font-style: normal;
+        --framer-font-style-bold: normal;
+        --framer-font-style-bold-italic: italic;
+        --framer-font-style-italic: italic;
+        --framer-font-weight: 400;
+        --framer-font-weight-bold: 700;
+        --framer-font-weight-bold-italic: 700;
+        --framer-font-weight-italic: 400;
+        --framer-letter-spacing: 0px;
+        --framer-line-height: 1.55em;
+        --framer-paragraph-spacing: 20px;
+        --framer-text-alignment: center;
+        --framer-text-color: #6b6e73;
+        --framer-text-decoration: none;
+        --framer-text-stroke-color: initial;
+        --framer-text-stroke-width: initial;
+        --framer-text-transform: none
+    }
+}
+
+.framer-MxHFy.framer-t0qe8,
+.framer-MxHFy .framer-t0qe8 {
+    display: block
+}
+
+.framer-MxHFy.framer-14qjxpk {
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 6px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 8px 12px;
+    position: relative;
+    text-decoration: none;
+    width: min-content;
+    will-change: var(--framer-will-change-override, transform)
+}
+
+.framer-MxHFy .framer-1vsiy66 {
+    flex: none;
+    height: auto;
+    position: relative;
+    white-space: pre;
+    width: auto
+}
+
+.framer-MxHFy .framer-17hvf97-container {
+    flex: none;
+    height: 16px;
+    position: relative;
+    width: 16px
+}
+
+.framer-MxHFy[data-border=true]:after,
+.framer-MxHFy [data-border=true]:after {
+    content: "";
+    border-width: var(--border-top-width, 0) var(--border-right-width, 0) var(--border-bottom-width, 0) var(--border-left-width, 0);
+    border-color: var(--border-color, none);
+    border-style: var(--border-style, none);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    border-radius: inherit;
+    pointer-events: none
+}
+
+@supports (aspect-ratio: 1) {
+    body {
+        --framer-aspect-ratio-supported: auto
+    }
+}
+
+.framer-9rFRo.framer-1sivo8t,
+.framer-9rFRo .framer-1sivo8t {
+    display: block
+}
+
+.framer-9rFRo.framer-qmusi5 {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 16px 0;
+    position: relative;
+    width: 1366px
+}
+
+.framer-9rFRo .framer-12vk0an {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 24px;
+    height: min-content;
+    justify-content: center;
+    max-width: 720px;
+    overflow: hidden;
+    padding: 12px 12px 12px 16px;
+    position: relative;
+    width: 720px;
+    will-change: var(--framer-will-change-override, transform);
+    z-index: 10
+}
+
+.framer-9rFRo .framer-1v58eb0 {
+    flex: none;
+    gap: 0px;
+    height: 32px;
+    overflow: visible;
+    position: relative;
+    text-decoration: none;
+    width: 32px;
+    z-index: 2
+}
+
+.framer-9rFRo .framer-179qlzy {
+    flex: none;
+    gap: 0px;
+    height: 32px;
+    left: calc(50% - 16px);
+    overflow: hidden;
+    position: absolute;
+    top: calc(50% - 16px);
+    width: 32px;
+    will-change: var(--framer-will-change-override, transform)
+}
+
+.framer-9rFRo .framer-1l3pwal-container,
+.framer-9rFRo .framer-1b23s2g-container {
+    flex: none;
+    height: 30px;
+    position: relative;
+    width: 30px;
+    z-index: 2
+}
+
+.framer-9rFRo .framer-1trb2if {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1 0 0px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    height: min-content;
+    justify-content: flex-start;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    width: 1px;
+    z-index: 8
+}
+
+.framer-9rFRo .framer-pwa18s {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1 0 0px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    width: 1px
+}
+
+.framer-9rFRo .framer-jch51w-container,
+.framer-9rFRo .framer-94saf9-container,
+.framer-9rFRo .framer-yxr7bd-container,
+.framer-9rFRo .framer-fwv1st-container,
+.framer-9rFRo .framer-m3k1or-container,
+.framer-9rFRo .framer-r80o6w-container {
+    flex: none;
+    height: auto;
+    position: relative;
+    width: auto
+}
+
+.framer-9rFRo .framer-1n76y5j {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    width: min-content
+}
+
+.framer-9rFRo .framer-gmtmd4 {
+    flex: none;
+    height: 20px;
+    overflow: visible;
+    position: relative;
+    text-decoration: none;
+    width: 20px
+}
+
+.framer-9rFRo .framer-1tcoibu-container {
+    flex: none;
+    inset: 0;
+    position: absolute
+}
+
+.framer-9rFRo .framer-uegnii {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 16px;
+    height: min-content;
+    justify-content: flex-end;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    width: min-content;
+    z-index: 8
+}
+
+.framer-9rFRo .framer-na3q25 {
+    flex: none;
+    height: 28px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    width: 1px
+}
+
+.framer-9rFRo .framer-1gx7o4x {
+    flex: none;
+    inset: -70px 0;
+    mix-blend-mode: overlay;
+    position: absolute;
+    z-index: 1
+}
+
+.framer-9rFRo .framer-1luxtf2 {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 24px;
+    height: min-content;
+    justify-content: flex-start;
+    max-width: 720px;
+    overflow: hidden;
+    padding: 0 8px 0 12px;
+    position: relative;
+    width: 100%;
+    will-change: var(--framer-will-change-override, transform)
+}
+
+.framer-9rFRo .framer-v794p4 {
+    align-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex: 1 0 0px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 16px;
+    height: min-content;
+    justify-content: flex-start;
+    overflow: visible;
+    padding: 20px 0 12px;
+    position: relative;
+    width: 1px
+}
+
+.framer-9rFRo .framer-14uywmd-container,
+.framer-9rFRo .framer-1h0r9s6-container,
+.framer-9rFRo .framer-1nx97lx-container,
+.framer-9rFRo .framer-chjbb0-container,
+.framer-9rFRo .framer-12lxq0f-container {
+    flex: none;
+    height: auto;
+    position: relative;
+    width: 100%
+}
+
+.framer-9rFRo .framer-ug39l3-container {
+    flex: none;
+    height: 44px;
+    position: relative;
+    width: 100%
+}
+
+.framer-9rFRo .framer-1orxmsi {
+    flex: none;
+    inset: -70px 0;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1
+}
+
+.framer-9rFRo.framer-v-1q5coxh.framer-qmusi5 {
+    padding: 15px;
+    width: 380px
+}
+
+.framer-9rFRo.framer-v-1q5coxh .framer-12vk0an,
+.framer-9rFRo.framer-v-114snjg .framer-12vk0an {
+    gap: unset;
+    justify-content: space-between;
+    padding: 12px;
+    width: 100%
+}
+
+.framer-9rFRo.framer-v-1q5coxh .framer-1gx7o4x,
+.framer-9rFRo.framer-v-114snjg .framer-1gx7o4x {
+    pointer-events: none
+}
+
+.framer-9rFRo.framer-v-114snjg.framer-qmusi5 {
+    gap: 0px;
+    padding: 15px;
+    width: 380px
+}
+
+.framer-9rFRo.framer-v-114snjg .framer-14uywmd-container {
+    order: 0
+}
+
+.framer-9rFRo.framer-v-114snjg .framer-1h0r9s6-container {
+    order: 1
+}
+
+.framer-9rFRo.framer-v-114snjg .framer-1nx97lx-container {
+    order: 2
+}
+
+.framer-9rFRo.framer-v-114snjg .framer-chjbb0-container {
+    order: 3
+}
+
+.framer-9rFRo.framer-v-114snjg .framer-12lxq0f-container {
+    order: 4
+}
+
+.framer-9rFRo.framer-v-114snjg .framer-ug39l3-container {
+    order: 7
+}
+
+.framer-9rFRo[data-border=true]:after,
+.framer-9rFRo [data-border=true]:after {
+    content: "";
+    border-width: var(--border-top-width, 0) var(--border-right-width, 0) var(--border-bottom-width, 0) var(--border-left-width, 0);
+    border-color: var(--border-color, none);
+    border-style: var(--border-style, none);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    border-radius: inherit;
+    pointer-events: none
+}
+
+.ssr-variant {
+    display: contents
+}
+
+#__framer-editorbar-container {
+    align-items: center;
+    bottom: 50%;
+    display: flex;
+    gap: 8px;
+    position: fixed;
+    right: 10px;
+    transform: translateY(50%);
+    z-index: calc(2147483647);
+}
+
+#__framer-editorbar-label {
+    background-color: #111;
+    border-radius: 8px;
+    font-family: "Inter", "Inter-Regular", system-ui, Arial, sans-serif;
+    font-size: 12px;
+    height: fit-content;
+    opacity: 0;
+    padding: 4px 8px;
+    transition: opacity 0.4s ease-out;
+    font-weight: 500;
+}
+
+#__framer-editorbar-button {
+    all: unset;
+    align-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    width: 30px;
+}
+
+#__framer-editorbar-label.__framer-editorbar-button-tooltip-visible {
+    opacity: 1;
+}
+
+#__framer-editorbar-label,
+#__framer-editorbar-button {
+    backdrop-filter: blur(10px);
+    background-color: rgba(34, 34, 34, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px;
+    color: #fff;
+}
+
+#__framer-editorbar-loading-spinner {
+    width: 12px;
+    height: 12px;
+    -webkit-mask: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAApNJREFUSA2tlUtLlFEYgEe7mtFFQ8NLFBG1SJAwahtiLVy5ceVSEPQH1LZf0Lp9FO1bdYNyI7gyBFcS2kAzilYq3sfxeYZ55Zv6FGfohWfOd97vnPd23u9MXeZoaeb1Q7gPHXAFzsAS5GACxiEPqVKXqs1kmtAPQi+cAtedToz1PJ8ExxPwDl7CAlRImoN7rBiF86ABHTiGAzMIh8n3O+ifwWc4EL0n5TGTYQijvjNSxbUadozInUeGZ3nuh1WYgpIkM+hGMwYajAgdrfUn+AaLoLTCAxiAOxCZxL4RdB+gZMjxEjwHo4hS8Jh5DR9hz0mKaNizegoNEI7Wee6FXJTISG6AUgDr+QImoAiHie+mwZJow/PRps4uwnsnRj8Epqc4voVJJ8eULOtW4BFYYjPpgjc+3IWI2sh/wFeoVl6xYQ48dDGLfjOwc/ygQqz595hUMVouS9QHBm4l6k3HWpnBLqicgVrlCxujSbR1Swd+UDpQYRS/oVaZZ2MWwlZBB9Zdxf+QTYw8SRgq6sAvz7vH6JULEB9USVHFjzZskgPRQR4ayxoXXIdaHdg9HrB2rErByWxZERnYtrWUzD0esDbtTmXPhzXwHrKLxEUbYGbVyDkWWwkdadfqbPmwDXZSCyh2VAf8BM/nOOJH5Y0QopMt2I5U/KO4DZZJB47XwEX+ex0mGroMV8sLwp56gyuGwiyW4SZ4c8bt2cZzO7jBNeqtsRHbeZ1g9krsMbhfYPv/c5gecA+4yAVuitFszE5Hjva872OMdXagF19JIoOYWyozMTI3J0tmA6gLvXPfO1cc/XOqOLe/HbjwD8yCXRD3VNJROEgatiRZMJsKsbZHia3nAdphtq8fkiWyXJbBe8uM1aXKPouNnz2Bm1kwAAAAAElFTkSuQmCC);
+    mask: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAApNJREFUSA2tlUtLlFEYgEe7mtFFQ8NLFBG1SJAwahtiLVy5ceVSEPQH1LZf0Lp9FO1bdYNyI7gyBFcS2kAzilYq3sfxeYZ55Zv6FGfohWfOd97vnPd23u9MXeZoaeb1Q7gPHXAFzsAS5GACxiEPqVKXqs1kmtAPQi+cAtedToz1PJ8ExxPwDl7CAlRImoN7rBiF86ABHTiGAzMIh8n3O+ifwWc4EL0n5TGTYQijvjNSxbUadozInUeGZ3nuh1WYgpIkM+hGMwYajAgdrfUn+AaLoLTCAxiAOxCZxL4RdB+gZMjxEjwHo4hS8Jh5DR9hz0mKaNizegoNEI7Wee6FXJTISG6AUgDr+QImoAiHie+mwZJow/PRps4uwnsnRj8Epqc4voVJJ8eULOtW4BFYYjPpgjc+3IWI2sh/wFeoVl6xYQ48dDGLfjOwc/ygQqz595hUMVouS9QHBm4l6k3HWpnBLqicgVrlCxujSbR1Swd+UDpQYRS/oVaZZ2MWwlZBB9Zdxf+QTYw8SRgq6sAvz7vH6JULEB9USVHFjzZskgPRQR4ayxoXXIdaHdg9HrB2rErByWxZERnYtrWUzD0esDbtTmXPhzXwHrKLxEUbYGbVyDkWWwkdadfqbPmwDXZSCyh2VAf8BM/nOOJH5Y0QopMt2I5U/KO4DZZJB47XwEX+ex0mGroMV8sLwp56gyuGwiyW4SZ4c8bt2cZzO7jBNeqtsRHbeZ1g9krsMbhfYPv/c5gecA+4yAVuitFszE5Hjva872OMdXagF19JIoOYWyozMTI3J0tmA6gLvXPfO1cc/XOqOLe/HbjwD8yCXRD3VNJROEgatiRZMJsKsbZHia3nAdphtq8fkiWyXJbBe8uM1aXKPouNnz2Bm1kwAAAAAElFTkSuQmCC);
+    -webkit-mask-size: 12px;
+    mask-size: 12px;
+    background-color: #fff;
+
+
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    animation-name: __framer-loading-spin;
+    animation-timing-function: linear;
+}
+
+@keyframes __framer-loading-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#__framer-editorbar {
+            /* https://sergeyski.com/css-color-scheme-and-iframes-lessons-learned-from-disqus-background-bug */
+            color-scheme: light dark;
+            overflow: hidden;
+            position: fixed;
+            border: none;
+            z-index: calc(2147483647);
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            touch-action: manipulation;
+        }
+
+        @supports (height: 100dvh) {
+            #__framer-editorbar {
+                height: 100dvh;
+            }
+        }
+
+        #__framer-editorbar.status_hidden {
+            display: none;
+        }
+
+        #__framer-editorbar.status_visually_hidden {
+            clip-path: circle(1px at calc(100% - 20px) calc(50% + 4px));
+            z-index: calc(2147483647 - 1);
+        }
+
+        #__framer-editorbar.status_measuring {
+            clip-path: unset;
+        }
